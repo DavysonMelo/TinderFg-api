@@ -11,7 +11,8 @@ const UserSchema = new Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        select: false
     },
     gender: {
         type: String,
@@ -28,6 +29,14 @@ const UserSchema = new Schema({
     age: Number,
     photos: String,
     bio: String,
+    likes: [{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }],
+    matches: [{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }]
 },{
     timestamps: true,
 });
