@@ -18,7 +18,7 @@ io.on("connection", (socket) => {
 
 app.use(cors());
 mongoose.connect(
-  "mongodb+srv://user:pass@cluster0-49yqn.mongodb.net/tinderFG?retryWrites=true&w=majority",
+  "mongodb+srv://dave:88169976@cluster0-49yqn.mongodb.net/tinderFG?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

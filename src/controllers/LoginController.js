@@ -9,7 +9,7 @@ module.exports = {
             const user = await User.findOne({ email }).select('+password');
 
             if(!user) {
-              return res.json({ error: 'User not fount' });
+              return res.json({ error: 'User not found' });
             }
 
             if(!await bcrypt.compare(password, user.password)) {
@@ -17,7 +17,6 @@ module.exports = {
             }
 
             user.password = undefined;
-
             return res.json(user);
         }catch(error){
             console.log('Login error');
