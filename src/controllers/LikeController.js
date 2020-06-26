@@ -32,10 +32,11 @@ module.exports = {
       loggedUser.likes.push(targetUser._id);
 
       await loggedUser.save();
+      await targetUser.save();
     } catch (error) {
       console.log("Like error", error);
     }
 
-    return res.json(loggedUser);
+    return res.json({ message: "User liked!" });
   },
 };
